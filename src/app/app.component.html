@@ -1,0 +1,5 @@
+<app-main-header  [item]="currentItem"> </app-main-header>
+<router-outlet  ></router-outlet>
+<h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900"> {{ receivedData }}
+</h1>
+<app-main-footer (dataEmitter)="receiveData($event)" ></app-main-footer>

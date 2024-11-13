@@ -1,0 +1,26 @@
+<section class="text-gray-600 body-font relative">
+  <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-red-900">
+    Posts Table Using Service
+  </h1> 
+  <div *ngIf="posts$ | async as posts; else loading">
+    <table class="table-auto w-full text-left">
+      <thead>
+        <tr>
+          <th class="px-4 py-2">ID</th>
+          <th class="px-4 py-2">Title</th>
+          <th class="px-4 py-2">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let post of posts">
+          <td class="px-4 py-2">{{ post.id }}</td>
+          <td class="px-4 py-2">{{ post.title }}</td>
+          <td class="px-4 py-2">{{ post.description }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <ng-template #loading>
+    <p>Loading posts...</p>
+  </ng-template>
+</section>
